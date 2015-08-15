@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "book_in_cpp", "book_in_cpp\book_in_cpp.vcproj", "{C659D834-94CD-4513-AF75-68E31E5709F8}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "os_learning", "os_learning\os_learning.vcproj", "{26A4C466-C2DE-4376-9699-0023BD309100}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "alg_network", "alg_network\alg_network.vcproj", "{9DF078AC-86A8-4E54-BCAD-BEBB479DEA9E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C659D834-94CD-4513-AF75-68E31E5709F8}.Debug|Win32.ActiveCfg = Debug|Win32
+		{C659D834-94CD-4513-AF75-68E31E5709F8}.Release|Win32.ActiveCfg = Release|Win32
+		{26A4C466-C2DE-4376-9699-0023BD309100}.Debug|Win32.ActiveCfg = Debug|Win32
+		{26A4C466-C2DE-4376-9699-0023BD309100}.Release|Win32.ActiveCfg = Release|Win32
+		{9DF078AC-86A8-4E54-BCAD-BEBB479DEA9E}.Debug|Win32.ActiveCfg = Debug|Win32
+		{9DF078AC-86A8-4E54-BCAD-BEBB479DEA9E}.Debug|Win32.Build.0 = Debug|Win32
+		{9DF078AC-86A8-4E54-BCAD-BEBB479DEA9E}.Release|Win32.ActiveCfg = Release|Win32
+		{9DF078AC-86A8-4E54-BCAD-BEBB479DEA9E}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

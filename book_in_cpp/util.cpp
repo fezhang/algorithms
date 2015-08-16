@@ -113,11 +113,11 @@ timer_mgr::timer_mgr(int initLen)
 };
 	
 #ifdef _DEBUG
-DsBOOL output_control::m_bPrintCtorDtor = DsDsFALSE;
-DsBOOL output_control::m_bPrintFunc = DsDsFALSE;
+DsBOOL output_control::m_bPrintCtorDtor = DsFALSE;
+DsBOOL output_control::m_bPrintFunc = DsFALSE;
 #else
-DsBOOL output_control::m_bPrintCtorDtor = DsDsFALSE;
-DsBOOL output_control::m_bPrintFunc = DsDsFALSE;
+DsBOOL output_control::m_bPrintCtorDtor = DsFALSE;
+DsBOOL output_control::m_bPrintFunc = DsFALSE;
 #endif
 // End class timer_mgr
 //////////////////////////////////////////////////////////////////////////

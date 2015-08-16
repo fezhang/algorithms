@@ -3,6 +3,7 @@
 
 #include "ds_comm.h"
 
+#if (defined DS_WIN)
 typedef void (*pfTimerCallBack)(void* param);
 
 class timer{
@@ -34,6 +35,17 @@ public:
 protected:
 	LARGE_INTEGER	m_llStartTime;
 };
+#elif (defined DS_MAC)
+
+class timer{
+public:
+    timer(){}
+    ~timer(){}
+    void Reset(){};
+    int Interval(){ return 0;}
+};
+
+#endif
 
 class timer_mgr
 {
@@ -98,8 +110,8 @@ protected:
 class output_control
 {
 public:
-	static BOOL m_bPrintCtorDtor;
-	static BOOL m_bPrintFunc;
+	static DsBOOL m_bPrintCtorDtor;
+	static DsBOOL m_bPrintFunc;
 };
 
 #define OUT_CD(exp)	\

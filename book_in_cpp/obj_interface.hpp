@@ -56,54 +56,54 @@ struct op_divides: public bin_function<T, T, T>
 };
 
 template <typename T>
-struct op_great: public bin_function<T, T, BOOL>
+struct op_great: public bin_function<T, T, DsBOOL>
 {
-	BOOL operator()(const T& _X, const T& _Y)const
+	DsBOOL operator()(const T& _X, const T& _Y)const
 	{
 		return (_X>_Y);
 	}
 };
 
 template <typename T>
-struct op_great_equal: public bin_function<T, T, BOOL>
+struct op_great_equal: public bin_function<T, T, DsBOOL>
 {
-	BOOL operator()(const T& _X, const T& _Y)const
+	DsBOOL operator()(const T& _X, const T& _Y)const
 	{
 		return (_X>=_Y);
 	}
 };
 
 template <typename T>
-struct op_less: public bin_function<T, T, BOOL>
+struct op_less: public bin_function<T, T, DsBOOL>
 {
-	BOOL operator()(const T& _X, const T& _Y)const
+	DsBOOL operator()(const T& _X, const T& _Y)const
 	{
 		return (_X<_Y);
 	}
 };
 
 template <typename T>
-struct op_less_equal: public bin_function<T, T, BOOL>
+struct op_less_equal: public bin_function<T, T, DsBOOL>
 {
-	BOOL operator()(const T& _X, const T& _Y)const
+	DsBOOL operator()(const T& _X, const T& _Y)const
 	{
 		return (_X<=_Y);
 	}
 };
 
 template <typename T>
-struct op_equal: public bin_function<T, T, BOOL>
+struct op_equal: public bin_function<T, T, DsBOOL>
 {
-	BOOL operator()(const T& _X, const T& _Y)const
+	DsBOOL operator()(const T& _X, const T& _Y)const
 	{
 		return (_X==_Y);
 	}
 };
 
 template <typename T>
-struct op_not_equal: public bin_function<T, T, BOOL>
+struct op_not_equal: public bin_function<T, T, DsBOOL>
 {
-	BOOL operator()(const T& _X, const T& _Y)const
+	DsBOOL operator()(const T& _X, const T& _Y)const
 	{
 		return (_X!=_Y);
 	}

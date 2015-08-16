@@ -22,8 +22,8 @@ typedef UINT32		DsSize;
 #define INVALID_DS_SIZE (UINT32)(-1)
 
 typedef UINT32		DsBOOL;
-#define DsTRUE		1
-#define DsFALSE		0
+#define DsDsTRUE		1
+#define DsDsFALSE		0
 
 #define DsNULL 0
 

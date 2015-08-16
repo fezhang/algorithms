@@ -14,8 +14,8 @@ class iqueue
 public:
 	iqueue(){};
 	virtual ~iqueue(){};
-	virtual BOOL empty() const = 0;
-	virtual BOOL full() const { return FALSE;}; //default implemention said queue will not full
+	virtual DsBOOL empty() const = 0;
+	virtual DsBOOL full() const { return DsFALSE;}; //default implemention said queue will not full
 	virtual void put(Item item) = 0;
 	virtual Item get() = 0;
 };
@@ -28,8 +28,8 @@ public:
 	queue_array();
 	queue_array(int nInitlen);
 	virtual ~queue_array();
-	virtual BOOL empty() const;
-	virtual BOOL full() const;
+	virtual DsBOOL empty() const;
+	virtual DsBOOL full() const;
 	virtual void put(Item item);
 	virtual Item get();
 protected:
@@ -76,21 +76,21 @@ queue_array<Item>::~queue_array()
 }
 
 template <typename Item>
-BOOL queue_array<Item>::empty() const
+DsBOOL queue_array<Item>::empty() const
 {
 	if(m_nDataLen == 0)
-		return TRUE;
+		return DsTRUE;
 	else
-		return FALSE;
+		return DsFALSE;
 };
 
 template <typename Item>
-BOOL queue_array<Item>::full() const
+DsBOOL queue_array<Item>::full() const
 {
 	if(m_nDataLen == m_nBuffLen)
-		return TRUE;
+		return DsTRUE;
 	else
-		return FALSE;
+		return DsFALSE;
 };
 
 template <typename Item>
@@ -132,7 +132,7 @@ public:
 public:
 	queue_list_double();
 	virtual ~queue_list_double();
-	virtual BOOL empty() const;
+	virtual DsBOOL empty() const;
 	virtual void put(Item item);
 	virtual Item get();
 protected:
@@ -158,12 +158,12 @@ queue_list_double<Item>::~queue_list_double()
 };
 
 template <typename Item>
-BOOL queue_list_double<Item>::empty() const
+DsBOOL queue_list_double<Item>::empty() const
 {
 	if(m_pTail != DsNULL)
-		return FALSE;
+		return DsFALSE;
 	else
-		return TRUE;
+		return DsTRUE;
 };
 
 template <typename Item>
@@ -215,7 +215,7 @@ public:
 public:
 	queue_list_single();
 	virtual ~queue_list_single();
-	virtual BOOL empty() const;
+	virtual DsBOOL empty() const;
 	virtual void put(Item item);
 	virtual Item get();
 protected:
@@ -241,12 +241,12 @@ queue_list_single<Item>::~queue_list_single()
 };
 
 template <typename Item>
-BOOL queue_list_single<Item>::empty() const
+DsBOOL queue_list_single<Item>::empty() const
 {
 	if(m_pTail != DsNULL)
-		return FALSE;
+		return DsFALSE;
 	else
-		return TRUE;
+		return DsTRUE;
 };
 
 template <typename Item>

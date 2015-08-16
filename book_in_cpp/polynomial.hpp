@@ -30,8 +30,8 @@ public:
 	polynomial<Item>& operator-(polynomial<Item>&);	//DONE
 	polynomial<Item> operator*(polynomial<Item>&);	//DONE
 
-	BOOL operator==(polynomial<Item>&);				//DONE
-	BOOL operator!=(polynomial<Item>&);				//DONE
+	DsBOOL operator==(polynomial<Item>&);				//DONE
+	DsBOOL operator!=(polynomial<Item>&);				//DONE
 
 public:
 	Item evaluate(Item) const;				//DONE
@@ -291,7 +291,7 @@ polynomial<Item> polynomial<Item>::operator*(polynomial& rhs)
 };
 
 template <typename Item>
-BOOL polynomial<Item>::operator==(polynomial<Item>& rhs)
+DsBOOL polynomial<Item>::operator==(polynomial<Item>& rhs)
 {
 	clear_zero_items();
 	rhs.clear_zero_items();
@@ -301,20 +301,20 @@ BOOL polynomial<Item>::operator==(polynomial<Item>& rhs)
 	{
 		if( pMyNode->get_data()._nIndex != pRhsNode->get_data()._nIndex
 		 || pMyNode->get_data()._nTimes != pRhsNode->get_data()._nTimes)
-		 return FALSE;
+		 return DsFALSE;
 		pMyNode = pMyNode->get_next();
 		pRhsNode = pRhsNode->get_next();
 	}
 	if(pMyNode || pRhsNode)
-		return FALSE;
+		return DsFALSE;
 
-	return TRUE;
+	return DsTRUE;
 };
 
 template <typename Item>
-BOOL polynomial<Item>::operator!=(polynomial<Item>& rhs)
+DsBOOL polynomial<Item>::operator!=(polynomial<Item>& rhs)
 {
-	return *this==rhs?FALSE:TRUE;	//use operator ==
+	return *this==rhs?DsFALSE:DsTRUE;	//use operator ==
 };
 
 template <typename Item>
@@ -391,7 +391,7 @@ void polynomial<Item>::add_item(int nIndex, int nTimes)
 
 	list_node_double<nomial>* pTemp = m_head;
 	list_node_double<nomial>* pTail = DsNULL;
-	BOOL bInsearted = FALSE;
+	DsBOOL bInsearted = DsFALSE;
 	while(pTemp)
 	{
 		pTail = pTemp;
@@ -405,7 +405,7 @@ void polynomial<Item>::add_item(int nIndex, int nTimes)
 			if(pTemp == m_head)
 				m_head = pNewNode;
 
-			bInsearted = TRUE;
+			bInsearted = DsTRUE;
 			break;
 		}
 		else if(pTemp->get_data()._nTimes == nTimes)
@@ -424,7 +424,7 @@ void polynomial<Item>::add_item(int nIndex, int nTimes)
 				delete pTemp;
 			};
 			
-			bInsearted = TRUE;
+			bInsearted = DsTRUE;
 			break;
 		}
 		pTemp = pTemp->get_next();

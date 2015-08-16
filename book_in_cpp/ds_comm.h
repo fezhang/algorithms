@@ -3,12 +3,19 @@
 
 #include "typedef.h"
 
-//#if defined(_WINDOWS) || defined(WIN32)
+#if defined(_WINDOWS) || defined(WIN32)
 #include <windows.h>
 //#define DS_EXPORT __declspec(dllexport)
 //#else
 //#define DS_EXPORT
-//#endif
+
+#define DS_WIN
+
+#elif (defined __MACOS__)
+
+#define DS_MAC
+
+#endif
 
 #include <stdlib.h>
 

@@ -17,16 +17,16 @@ void comex(Item& l, Item& r)
 }
 
 template <typename Item>
-BOOL compexch(Item& l, Item& r)
+DsBOOL compexch(Item& l, Item& r)
 {
 	if(l>r)
 	{
 		Item temp = l;
 		l = r;
 		r = temp;
-		return TRUE;
+		return DsTRUE;
 	}
-	return FALSE;
+	return DsFALSE;
 }
 
 template <typename Item>
@@ -62,13 +62,13 @@ template <typename Item>
 	if(!pVector || pVector->size() == 0)
 		return;
 	
-	BOOL bDoExchange = FALSE;
+	DsBOOL bDoExchange = DsFALSE;
 	for(int i=pVector->size()-1; i>=1; --i)
 	{
-		bDoExchange = FALSE;
+		bDoExchange = DsFALSE;
 		for(int j=0; j<i; ++j)
 		{
-			BOOL bExchange = compexch((*pVector)[j],(*pVector)[j+1]);
+			DsBOOL bExchange = compexch((*pVector)[j],(*pVector)[j+1]);
 			if(!bDoExchange)
 				bDoExchange = bExchange;
 		}

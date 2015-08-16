@@ -11,7 +11,7 @@ public:
 	static int calc_math_expression(char* input);
 
 protected:	
-	static BOOL infix_to_postfix(char* input, char* output);
+	static DsBOOL infix_to_postfix(char* input, char* output);
 	static int calc_postfix(char* input);
 };
 #endif //_INCLUDED_STACK_USE_H_

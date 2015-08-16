@@ -12,7 +12,7 @@ void adt_testee::execute()
 
 void adt_testee::check_sequence()
 {
-	BOOL bSequenceValid = FALSE;
+	DsBOOL bSequenceValid = DsFALSE;
 	bSequenceValid = adt_stack_exercise::check_squence("abcde", "ecdba");
 	cout<<"Sequences: abcde and ecdba are ";
 	cout<<(bSequenceValid?"":"not ")<<"valid stack input and output"<<endl;

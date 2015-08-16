@@ -24,13 +24,13 @@ public:
 	virtual int size();
 	virtual Item& operator[](int nIndex);
 
-	BOOL remove(Item);
+	DsBOOL remove(Item);
 	int find(Item);
 	_vector<Item>* clone();
 
 	Item* GetBase();
 protected:
-	BOOL expand();
+	DsBOOL expand();
 	void init(int size);
 	Item*	m_pBase;
 	int		m_nAllocated;
@@ -39,7 +39,7 @@ protected:
 protected:
 	_vector(_vector<Item>&);				//no implementation
 	_vector<Item>& operator=(_vector<Item>&);	//no implementation
-	BOOL operator>(_vector<Item>&);		//no implementation
+	DsBOOL operator>(_vector<Item>&);		//no implementation
 	//...
 };
 
@@ -114,16 +114,16 @@ Item& _vector<Item>::operator[](int nIndex)
 };
 
 template <typename Item>
-BOOL _vector<Item>::remove(Item data)
+DsBOOL _vector<Item>::remove(Item data)
 {
 	int nIndex = find(data);
 	if(nIndex == -1)
-		return FALSE;
+		return DsFALSE;
 	else
 	{
 		memcpy(m_pBase+nIndex, m_pBase+nIndex+1; m_nUsed-nIndex-1);
 		--m_nUsed;
-		return TRUE;
+		return DsTRUE;
 	}
 };
 
@@ -167,23 +167,23 @@ void _vector<Item>::init(int size)
 };
 
 template <typename Item>
-BOOL _vector<Item>::expand()
+DsBOOL _vector<Item>::expand()
 {
 	if(!m_pBase)
 	{
 		init(_vector::_SIZE_MINIMIZED_);
-		return TRUE;
+		return DsTRUE;
 	}
 	Item* pNewBase = new Item[m_nAllocated*2];
 	if(!pNewBase)
-		return FALSE;
+		return DsFALSE;
 
 	memcpy(pNewBase, m_pBase, m_nUsed*sizeof(Item));
 	m_nAllocated *= 2;
 	delete[] m_pBase;
 	m_pBase = pNewBase;
 	
-	return TRUE;
+	return DsTRUE;
 };
 // end of implementation of class _vector
 //////////////////////////////////////////////////////////////////////////

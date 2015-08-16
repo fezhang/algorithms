@@ -10,7 +10,7 @@ public:
 	// please ref book
 	// this version hasn't considered the same char in sequence
 	// and also ignore the wrong input
-	static BOOL check_squence(char* input, char* output);
+	static DsBOOL check_squence(char* input, char* output);
 	static int get_char_index(char* str, char ch);
 };
 #endif //_INCLUDED_DATA_STRUCTURE_EXERCISE_H_

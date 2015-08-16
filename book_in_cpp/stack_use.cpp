@@ -52,10 +52,10 @@ int adt_stack_usage::calc_postfix(char* input)
 	return nReturn;
 };
 
-BOOL adt_stack_usage::infix_to_postfix(char* input, char* output)
+DsBOOL adt_stack_usage::infix_to_postfix(char* input, char* output)
 {
 	if(!input || !output)
-		return FALSE;
+		return DsFALSE;
 	
 	int nTotalLen = strlen(input);
 	int nOutPos = 0;
@@ -111,5 +111,5 @@ BOOL adt_stack_usage::infix_to_postfix(char* input, char* output)
 	cout<<"		Input = "<<input<<endl;
 	cout<<"		Output = "<<output<<endl;
 	cout<<"	adt_stack_usage::infix_to_postfix -- END"<<endl;
-	return TRUE;
+	return DsTRUE;
 };

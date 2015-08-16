@@ -1,19 +1,19 @@
 #include "datastructure_exercise.h"
 
 
-BOOL adt_stack_exercise::check_squence(char* input, char* output)
+DsBOOL adt_stack_exercise::check_squence(char* input, char* output)
 {
 	if(!input || !output)
 	{
 		cout<<"ERROR: check_squence -- NULL string as parameter"<<endl;
-		return FALSE;
+		return DsFALSE;
 	}
 
 	int nSequenceLen = strlen(input);
 	if(nSequenceLen != strlen(output))
 	{
 		cout<<"ERROR: check_squence -- different input string len"<<endl;
-		return FALSE;
+		return DsFALSE;
 	}
 	
 	int* arrCharIndex = new int[nSequenceLen];
@@ -21,7 +21,7 @@ BOOL adt_stack_exercise::check_squence(char* input, char* output)
 	if(!arrCharIndex)
 	{
 		cout<<"ERROR: check_squence -- not enough memory"<<endl;
-		return FALSE;
+		return DsFALSE;
 	}
 
 	int i = 0;
@@ -32,7 +32,7 @@ BOOL adt_stack_exercise::check_squence(char* input, char* output)
 		{
 			cout<<"ERROR: check_squence -- wrong output string"<<endl;
 			delete[] arrCharIndex;
-			return FALSE;
+			return DsFALSE;
 		}
 	}
 
@@ -48,7 +48,7 @@ BOOL adt_stack_exercise::check_squence(char* input, char* output)
 					if(nLastIndex < arrCharIndex[j])
 					{
 						delete[] arrCharIndex;
-						return FALSE;
+						return DsFALSE;
 					}
 					nLastIndex = arrCharIndex[j];
 				}
@@ -59,7 +59,7 @@ BOOL adt_stack_exercise::check_squence(char* input, char* output)
 		}
 	}
 	delete[] arrCharIndex;
-	return TRUE;
+	return DsTRUE;
 };
 
 int adt_stack_exercise::get_char_index(char* str, char ch)

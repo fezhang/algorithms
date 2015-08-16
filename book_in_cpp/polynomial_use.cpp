@@ -117,8 +117,8 @@ void adt_polynomial_usage::test_equal_notequal()
 	pn1.output();
 	cout<<"Polynomial 2 = ";
 	pn2.output();
-	cout<<"1 == 2?	"<<(pn1==pn2?"TRUE":"FALSE")<<endl;
-	cout<<"1 != 2?	"<<(pn1!=pn2?"TRUE":"FALSE")<<endl;
+	cout<<"1 == 2?	"<<(pn1==pn2?"DsTRUE":"DsFALSE")<<endl;
+	cout<<"1 != 2?	"<<(pn1!=pn2?"DsTRUE":"DsFALSE")<<endl;
 
 	polynomial<int> pn3;
 	pn3.add_item(-1,1);
@@ -130,8 +130,8 @@ void adt_polynomial_usage::test_equal_notequal()
 	pn3.output();
 	cout<<"Polynomial 4 = ";
 	pn4.output();
-	cout<<"3 == 4?	"<<(pn3==pn4?"TRUE":"FALSE")<<endl;
-	cout<<"3 != 4?	"<<(pn3!=pn4?"TRUE":"FALSE")<<endl;
+	cout<<"3 == 4?	"<<(pn3==pn4?"DsTRUE":"DsFALSE")<<endl;
+	cout<<"3 != 4?	"<<(pn3!=pn4?"DsTRUE":"DsFALSE")<<endl;
 }
 
 void adt_polynomial_usage::test_evaluate()

@@ -55,7 +55,7 @@ public:
 	void set_lchild(t_pnode);
 	void set_rchild(t_pnode);
 
-	BOOL has_children();
+	DsBOOL has_children();
 public:
 	t_pnode add_lchild(Item);
 	t_pnode add_rchild(Item);
@@ -170,12 +170,12 @@ void bin_tree_node<Item>::set_rchild(bin_tree_node<Item>* rchild)
 };
 
 template <typename Item>
-BOOL bin_tree_node<Item>::has_children()
+DsBOOL bin_tree_node<Item>::has_children()
 {
 	if(m_pLChild || m_pRChild)
-		return TRUE;
+		return DsTRUE;
 	else
-		return FALSE;
+		return DsFALSE;
 };
 
 template <typename Item>
@@ -329,8 +329,8 @@ public:
 	
 	t_tree* clone();
 public:
-	BOOL empty();
-	BOOL has_children();
+	DsBOOL empty();
+	DsBOOL has_children();
 	void add_lchild(t_tree&);
 	void add_rchild(t_tree&);
 	void remove_lchild();
@@ -417,24 +417,24 @@ bin_tree<Item>* bin_tree<Item>::clone()
 };
 
 template <typename Item>
-BOOL bin_tree<Item>::empty()
+DsBOOL bin_tree<Item>::empty()
 {
 	if(m_root == DsNULL)
-		return TRUE;
+		return DsTRUE;
 	else
-		return FALSE;
+		return DsFALSE;
 };
 
 template <typename Item>
-BOOL bin_tree<Item>::has_children()
+DsBOOL bin_tree<Item>::has_children()
 {
 	if(!empty())
 	{
 		if(m_root->get_lchild() || m_root->get_rchild())
-			return TRUE;
+			return DsTRUE;
 	}
 
-	return FALSE;
+	return DsFALSE;
 };
 
 template <typename Item>

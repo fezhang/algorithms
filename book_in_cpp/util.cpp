@@ -85,12 +85,12 @@ void timer_mgr::add_item(char* str, int len)
 	if(!nStrLen)
 	{
 		m_strArray[m_used] = new char[10];
-		lstrcpyn(m_strArray[m_used], "NULL", 5);
+		memcpy(m_strArray[m_used], "NULL", 5);
 	}
 	else
 	{
 		m_strArray[m_used] = new char[nStrLen+5];
-		lstrcpyn(m_strArray[m_used], str, nStrLen+1);
+		memcpy(m_strArray[m_used], str, nStrLen+1);
 	}
 	m_timerArray[m_used] = len;
 	++m_used;
@@ -113,11 +113,11 @@ timer_mgr::timer_mgr(int initLen)
 };
 	
 #ifdef _DEBUG
-BOOL output_control::m_bPrintCtorDtor = FALSE;
-BOOL output_control::m_bPrintFunc = FALSE;
+DsBOOL output_control::m_bPrintCtorDtor = DsDsFALSE;
+DsBOOL output_control::m_bPrintFunc = DsDsFALSE;
 #else
-BOOL output_control::m_bPrintCtorDtor = FALSE;
-BOOL output_control::m_bPrintFunc = FALSE;
+DsBOOL output_control::m_bPrintCtorDtor = DsDsFALSE;
+DsBOOL output_control::m_bPrintFunc = DsDsFALSE;
 #endif
 // End class timer_mgr
 //////////////////////////////////////////////////////////////////////////

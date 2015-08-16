@@ -42,9 +42,9 @@ template <typename Item>
 int stack<Item>::empty() const
 {
 	if(-1==m_nTop)
-		return TRUE;
+		return DsTRUE;
 	else
-		return FALSE;
+		return DsFALSE;
 }
 
 template <typename Item>

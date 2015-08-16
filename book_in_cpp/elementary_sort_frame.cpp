@@ -66,7 +66,7 @@
 };
 
 /*static*/ void basic_sort::run_one_vector_sort(void (pf)(_vector<int>*), int nLen, 
-		BOOL bOutput, BOOL bSortAgain, BOOL bNeedVerify)
+		DsBOOL bOutput, DsBOOL bSortAgain, DsBOOL bNeedVerify)
 {
 	timer ter;
 	basic_sort bs;
@@ -108,7 +108,7 @@
 };
 
 /*static*/ void basic_sort::run_one_list_sort(void (pf)(list_single<int>*), int nLen, 
-		BOOL bOutput, BOOL bSortAgain, BOOL bNeedVerify, void (pf2)(list_single<int>*))
+		DsBOOL bOutput, DsBOOL bSortAgain, DsBOOL bNeedVerify, void (pf2)(list_single<int>*))
 {
 	timer ter;
 	basic_sort bs;
@@ -152,25 +152,25 @@
 /*static*/ void basic_sort::test_list_sort()
 {
 	cout<<"bubble sort:"<<endl;
-//	run_one_list_sort(sing_list_sort<int>::bubble, 100, FALSE, FALSE, FALSE, NULL);
-//	run_one_list_sort(sing_list_sort<int>::bubble, 200, FALSE, FALSE, FALSE, NULL);
-//	run_one_list_sort(sing_list_sort<int>::bubble, 400, FALSE, FALSE, FALSE, NULL);
-//	run_one_list_sort(sing_list_sort<int>::bubble, 800, FALSE, FALSE, FALSE, NULL);
-//	run_one_list_sort(sing_list_sort<int>::bubble, 1600, FALSE, FALSE, FALSE, NULL);
-//	run_one_list_sort(sing_list_sort<int>::bubble, 3200, FALSE, FALSE, FALSE, NULL);
-// 	run_one_list_sort(sing_list_sort<int>::bubble, 6400, FALSE, FALSE, FALSE, NULL);
+//	run_one_list_sort(sing_list_sort<int>::bubble, 100, DsFALSE, DsFALSE, DsFALSE, NULL);
+//	run_one_list_sort(sing_list_sort<int>::bubble, 200, DsFALSE, DsFALSE, DsFALSE, NULL);
+//	run_one_list_sort(sing_list_sort<int>::bubble, 400, DsFALSE, DsFALSE, DsFALSE, NULL);
+//	run_one_list_sort(sing_list_sort<int>::bubble, 800, DsFALSE, DsFALSE, DsFALSE, NULL);
+//	run_one_list_sort(sing_list_sort<int>::bubble, 1600, DsFALSE, DsFALSE, DsFALSE, NULL);
+//	run_one_list_sort(sing_list_sort<int>::bubble, 3200, DsFALSE, DsFALSE, DsFALSE, NULL);
+// 	run_one_list_sort(sing_list_sort<int>::bubble, 6400, DsFALSE, DsFALSE, DsFALSE, NULL);
 
 	cout<<"selection sort:"<<endl;
-//	run_one_list_sort(sing_list_sort<int>::selection, 100, FALSE, FALSE, FALSE, NULL);
-//	run_one_list_sort(sing_list_sort<int>::selection, 200, FALSE, FALSE, FALSE, NULL);
-//	run_one_list_sort(sing_list_sort<int>::selection, 400, FALSE, FALSE, FALSE, NULL);
-//	run_one_list_sort(sing_list_sort<int>::selection, 800, FALSE, FALSE, FALSE, NULL);
-//	run_one_list_sort(sing_list_sort<int>::selection, 1600, FALSE, FALSE, FALSE, NULL);
-//	run_one_list_sort(sing_list_sort<int>::selection, 3200, FALSE, FALSE, FALSE, NULL);
-// 	run_one_list_sort(sing_list_sort<int>::selection, 6400, FALSE, FALSE, FALSE, NULL);
+//	run_one_list_sort(sing_list_sort<int>::selection, 100, DsFALSE, DsFALSE, DsFALSE, NULL);
+//	run_one_list_sort(sing_list_sort<int>::selection, 200, DsFALSE, DsFALSE, DsFALSE, NULL);
+//	run_one_list_sort(sing_list_sort<int>::selection, 400, DsFALSE, DsFALSE, DsFALSE, NULL);
+//	run_one_list_sort(sing_list_sort<int>::selection, 800, DsFALSE, DsFALSE, DsFALSE, NULL);
+//	run_one_list_sort(sing_list_sort<int>::selection, 1600, DsFALSE, DsFALSE, DsFALSE, NULL);
+//	run_one_list_sort(sing_list_sort<int>::selection, 3200, DsFALSE, DsFALSE, DsFALSE, NULL);
+// 	run_one_list_sort(sing_list_sort<int>::selection, 6400, DsFALSE, DsFALSE, DsFALSE, NULL);
 };
 
-BOOL basic_sort::generate_rand_vector(int nLen)
+DsBOOL basic_sort::generate_rand_vector(int nLen)
 {
 	rand_generator rg(0, 0, 10000);
 	if(nLen <= 0)
@@ -181,7 +181,7 @@ BOOL basic_sort::generate_rand_vector(int nLen)
 	for(int i=0; i<nLen; ++i)
 		m_pVector->push_back(rg.get());
 	
-	return TRUE;
+	return DsTRUE;
 };
 
 void basic_sort::output_vector()
@@ -211,7 +211,7 @@ void basic_sort::free_vector()
 	}
 };
 
-BOOL basic_sort::generate_rand_list(int nLen)
+DsBOOL basic_sort::generate_rand_list(int nLen)
 {
 	rand_generator rg(0, 0, 10000);
 	if(nLen <= 0)
@@ -220,14 +220,14 @@ BOOL basic_sort::generate_rand_list(int nLen)
 	m_pSlist = new list_single<int>();
 
 	if(!m_pSlist)
-		return FALSE;
+		return DsFALSE;
 
 	for(int i=0; i<nLen; ++i)
 	{
 		m_pSlist->add(rg.get());
 	}
 	
-	return TRUE;
+	return DsTRUE;
 };
 
 void basic_sort::free_list()
